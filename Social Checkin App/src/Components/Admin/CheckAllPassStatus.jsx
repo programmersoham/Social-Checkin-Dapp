@@ -55,4 +55,4 @@ const CheckAllPassStatus = () => {
     );
 };
 
-export default CheckAllPassStatus; OK 
+export default CheckAllPassStatus; 
