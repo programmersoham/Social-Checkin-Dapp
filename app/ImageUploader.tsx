@@ -57,13 +57,13 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ isConnected }) => {
                 <div>
                     <img src={URL.createObjectURL(selectedFile)} alt="Uploaded Image" />
                     <div>{fileName}</div> {/* Display the file name */}
-                    <button onClick={handleRemoveImage} className="border border-red-500">Remove Image</button>
+                    <button onClick={handleRemoveImage} className="border-4 border-red-500">Remove Image</button>
                     {location && (
                         <div>
                             Location: Latitude {location.latitude}, Longitude {location.longitude}
                         </div>
                     )}
-                    <button className='border border-green-500'>Mint as NFT 🚀</button>
+                    <button className='border-4 border-yellow-700'>Mint as NFT 🚀</button>
                 </div>
             )}
             {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
