@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { checkConnection, retrievePublicKey } from "./Freighter";
+import ImageUploader from "./ImageUploader";
 import StellarLogo from "../public/stellarlogo.png";
 
 interface HeaderProps {
@@ -53,8 +54,7 @@ const Header: React.FC<HeaderProps> = ({ setPubKey }) => {
                 Address
               </span>
               <span className="px-2">
-
-                ${publicKey}
+                {publicKey}
                 {/* {`${publicKey.substring(0, 4)} ${
                   publicKey && "..."
                 } ${publicKey.substring(publicKey.length - 4)}`} */}
@@ -67,6 +67,11 @@ const Header: React.FC<HeaderProps> = ({ setPubKey }) => {
               onClick={connectWallet}
             >
               {connect}
+              {connect === "Connected!" ? (
+                <ImageUploader isConnected={true} />
+              ) : (
+                <ImageUploader isConnected={false} />
+              )}
             </button>
           </li>
         </ul>
@@ -83,3 +88,5 @@ export default Header;
 2. To get the public key of the connected wallet.
 3. Signing the transaction.
 */
+
+// image uploader component : image uploader displays file picker when user has connected wallet and displays message to connect wallet when user has not connected wallet.
