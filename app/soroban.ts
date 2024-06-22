@@ -11,6 +11,7 @@ import { userSignTransaction } from "./Freighter";
 
 const rpcUrl: string = "https://soroban-testnet.stellar.org";
 
+
 const contractAddress: string =
   "CBPSRM3TVRYA6PT7ESIXC64QZDTKIQNSKBYJ4CED64CN2OITETB67X2P";
 
@@ -33,7 +34,7 @@ async function contractInt(caller: string, functName: string, values: any): Prom
   const provider = new SorobanRpc.Server(rpcUrl, { allowHttp: true });
   const sourceAccount = await provider.getAccount(caller);
   const contract = new Contract(contractAddress);
-  let buildTx: IDBTransaction;
+  let buildTx: any;
 
   if (values == null) {
     buildTx = new TransactionBuilder(sourceAccount, params)
